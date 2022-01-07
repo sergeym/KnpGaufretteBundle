@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 use Gaufrette\FilesystemMapInterface;
-use Gaufrette\Glob;
+use Knp\Bundle\GaufretteBundle\Glob;
 
 /**
  * Command that lists the file keys of a filesystem
@@ -84,5 +84,7 @@ EOT
         foreach ($keys as $key) {
             $output->writeln(' - <info>' . $key . '</info>');
         }
+
+        return Command::SUCCESS;
     }
 }
